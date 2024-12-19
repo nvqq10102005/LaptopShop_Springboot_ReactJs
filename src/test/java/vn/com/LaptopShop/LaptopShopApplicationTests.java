@@ -1,4 +1,4 @@
-package com.example.LaptopShop;
+package vn.com.LaptopShop;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

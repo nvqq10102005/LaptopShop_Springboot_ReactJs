@@ -1,4 +1,4 @@
-package com.example.LaptopShop;
+package vn.com.LaptopShop;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
