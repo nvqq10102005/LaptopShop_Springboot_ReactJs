@@ -38,26 +38,18 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th>1</th>
-                                        <th>22g@gmail</th>
-                                        <th>Nguyen</th>
-                                        <th>
-                                            <button type="button" class="btn btn-success">View</button>
-                                            <button type="button" class="btn btn-warning mx-2">Update</button>
-                                            <button type="button" class="btn btn-danger">Delete</button>
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <th>1</th>
-                                        <th>22g@gmail</th>
-                                        <th>Nguyen</th>
-                                        <th>
-                                            <button type="button" class="btn btn-success">View</button>
-                                            <button type="button" class="btn btn-warning mx-2">Update</button>
-                                            <button type="button" class="btn btn-danger">Delete</button>
-                                        </th>
-                                    </tr>
+                                    <c:forEach var="user" items="${users}">
+                                        <tr>
+                                            <th>${user.id}</th>
+                                            <td>${user.email}</td>
+                                            <td>${user.fullName}</td>
+                                            <td>
+                                                <button type="button" class="btn btn-success">View Details</button>
+                                                <button type="button" class="btn btn-warning mx-2">Update</button>
+                                                <button type="button" class="btn btn-danger">Delete</button>
+                                            </td>
+                                        </tr>
+                                    </c:forEach>
                                 </tbody>
                             </table>
 
