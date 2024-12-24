@@ -1,5 +1,7 @@
 package vn.com.LaptopShop.controller;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -22,6 +24,8 @@ public class UserController {
 
     @RequestMapping("/")
     public String getView(Model model) {
+        List<User> lUsers = this.userService.getAllUsersByEmail("quynv@techzone.io.vn");
+        System.out.println(lUsers);
         model.addAttribute("hello", "test");
         model.addAttribute("hoidanit", "from controller");
         return "hello";
@@ -40,4 +44,6 @@ public class UserController {
         this.userService.handlesaveUser(user);
         return "hello";
     }
+
+
 }
