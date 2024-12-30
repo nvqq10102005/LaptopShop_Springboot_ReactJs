@@ -23,8 +23,6 @@
                         <div class="col-12 mx-auto">
                             <div class="d-flex justify-content-between">
                                 <h3>TABLE DETAILS ${id}</h3>
-                                <a href="/admin/user" class="btn btn-primary">BACK</a>
-
                             </div>
                             <hr />
                             <div class="card mb-3">
@@ -39,10 +37,11 @@
                                                     User Info
                                                 </div>
                                                 <ul class="list-group list-group-flush">
-                                                    <li class="list-group-item">ID</li>
-                                                    <li class="list-group-item">email</li>
-                                                    <li class="list-group-item">fullname</li>
-                                                    <li class="list-group-item">address</li>
+                                                    <li class="list-group-item">ID: ${user.id}</li>
+                                                    <li class="list-group-item">email: ${user.email}</li>
+                                                    <li class="list-group-item">fullname: ${user.fullName}</li>
+                                                    <li class="list-group-item">PhoneNumber: ${user.phone}</li>
+                                                    <li class="list-group-item">address: ${user.address}</li>
                                                 </ul>
                                             </div>
                                             <h5 class="card-title mt-4">Card title</h5>
@@ -58,7 +57,9 @@
                         </div>
 
                     </div>
+                    <a href="/admin/user" class="btn btn-secondary col-3 float-end">BACK</a>
                 </div>
+
             </body>
 
             </html>
