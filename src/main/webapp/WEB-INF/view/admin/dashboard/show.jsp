@@ -67,17 +67,17 @@
                                         Dashboard
                                     </a>
 
-                                    <a class="nav-link" href="index.html">
+                                    <a class="nav-link" href="admin/user">
                                         <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                         User
                                     </a>
 
-                                    <a class="nav-link" href="index.html">
+                                    <a class="nav-link" href="/admin/product">
                                         <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                         Product
                                     </a>
 
-                                    <a class="nav-link" href="index.html">
+                                    <a class="nav-link" href="admin/order">
                                         <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                         Order
                                     </a>
@@ -708,9 +708,10 @@
                                 <div class="d-flex align-items-center justify-content-between small">
                                     <div class="text-muted">Copyright &copy; Qira2024</div>
                                     <div>
-                                        <a href="https://hoidanit.vn/" target="_blank">Website</a>
+                                        <a href="https://github.com/nvqq10102005" target="_blank">Github</a>
                                         &middot;
-                                        <a href="https://www.youtube.com/@hoidanit" target="_blank">Youtube channel</a>
+                                        <a href="https://www.facebook.com/nguyen.van.quy.696696/"
+                                            target="_blank">Facebook </a>
                                     </div>
                                 </div>
                             </div>
