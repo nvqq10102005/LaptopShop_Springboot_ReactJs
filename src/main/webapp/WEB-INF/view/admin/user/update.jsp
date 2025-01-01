@@ -46,8 +46,7 @@
                                     <form:input type="text" class="form-control" path="address" />
                                 </div>
 
-                                <button type="submit" class="btn col-12 btn-warning">Update now</button>
-                                <a href="/admin/user" class="btn btn-secondary col-12 mt-3">Back</a>
+                                                <button type="submit" class="btn btn-warning">Update</button>
                             </form:form>
                         </div>
 
