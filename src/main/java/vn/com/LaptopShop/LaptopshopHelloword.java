@@ -10,8 +10,4 @@ public class LaptopshopHelloword {
 	public String userPage() {
 		return "this is user";
 	}
-	@GetMapping("/admin")
-	public String adminPage() {
-		return "this is admin";
-	}
 }
