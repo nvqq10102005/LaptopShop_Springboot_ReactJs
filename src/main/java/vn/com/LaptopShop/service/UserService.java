@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import jakarta.transaction.Transactional;
 import vn.com.LaptopShop.domain.User;
 import vn.com.LaptopShop.repository.UserRepository;
 
@@ -21,18 +22,18 @@ public class UserService {
         return this.userRepository.findAll();
     }
 
-    public List<User> getAllUsersByEmail(String email){
-        return this.userRepository.findAll();
+    public List<User> getAllUsersByEmail(String email) {
+        return this.userRepository.findOneByEmail(email);
     }
 
-    public User handlesaveUser(User user){
-        User getUser = this.userRepository.save(user);
-        return getUser;
+    public User handleSaveUser(User user) {
+        User currentUser = this.userRepository.save(user);
+        System.out.println(currentUser);
+        return currentUser;
     }
 
     public User getUserById(long id){
-        User getUserId = this.userRepository.findById(id);
-        return getUserId;
+        return userRepository.findById(id);
     }
 
     public void deleteUser(long id){

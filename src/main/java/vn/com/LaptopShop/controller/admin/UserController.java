@@ -1,19 +1,19 @@
-package vn.com.LaptopShop.controller;
+package vn.com.LaptopShop.controller.admin;
 
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import vn.com.LaptopShop.domain.User;
-import vn.com.LaptopShop.repository.UserRepository;
+
 import vn.com.LaptopShop.service.UserService;
 
 @Controller
@@ -51,7 +51,7 @@ public class UserController {
 
     @RequestMapping(value = "/admin/user/create", method = RequestMethod.POST)
     public String createUserPage(Model model, @ModelAttribute("newUser") User user) {
-        this.userService.handlesaveUser(user);
+        this.userService.handleSaveUser(user);
         return "redirect:/admin/user";
     }
     @RequestMapping(value = "/admin/user/create")
@@ -76,7 +76,7 @@ public class UserController {
             currentUser.setPhone(user.getPhone());
             currentUser.setAddress(user.getAddress());
 
-            this.userService.handlesaveUser(currentUser);
+            this.userService.handleSaveUser(currentUser);
         }
         return "redirect:/admin/user";
     }
@@ -89,10 +89,9 @@ public class UserController {
     }
 
     @PostMapping("/admin/user/delete")
-    public String postDeleteUser(Model model, @ModelAttribute("newUser") User user){
-        this.userService.deleteUser(user.getId());
+        public String postDeleteUser(@RequestParam("id") Long id) {
+        this.userService.deleteUser(id);
         return "redirect:/admin/user";
     }
-
 
 }

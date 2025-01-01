@@ -13,11 +13,10 @@ public interface UserRepository extends JpaRepository<User,Long> {
 
     void deleteById(long id);
 
-    List<User> findByEmailAndPassword(String email,String password);
+    List<User> findOneByEmail(String email);
+
+    List<User> findAll();
 
     User findById(long id);
-
-
-
     
 } 
