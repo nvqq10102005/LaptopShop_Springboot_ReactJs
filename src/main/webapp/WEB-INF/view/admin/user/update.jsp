@@ -60,6 +60,12 @@
                                                     <label class="form-label">Address:</label>
                                                     <form:input type="text" class="form-control" path="address" />
                                                 </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label">Role:</label>
+                                                    <form:select path="role.id" class="form-control">
+                                                         <form:options items="${roles}" itemValue="id" itemLabel="name" />
+                                                    </form:select>
+                                                </div>
                                                 <a href="/admin/user" class="btn btn-secondary col-2">Back</a>
                                                 <button type="submit" class="btn btn-warning col-2 float-end">Update</button>
                                             </form:form>

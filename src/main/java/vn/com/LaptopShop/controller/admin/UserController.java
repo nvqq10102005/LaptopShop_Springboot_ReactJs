@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import vn.com.LaptopShop.domain.Role;
 import vn.com.LaptopShop.domain.User;
+import vn.com.LaptopShop.service.RoleService;
 import vn.com.LaptopShop.service.UploadFileService;
 import vn.com.LaptopShop.service.UserService;
 
@@ -25,15 +27,18 @@ public class UserController {
 
     private final UploadFileService uploadFileService;
 
+    private final RoleService roleService;
     private PasswordEncoder passwordEncoder;
 
 
     public UserController(UserService userService , UploadFileService uploadFileService,
-    PasswordEncoder passwordEncoder
+    PasswordEncoder passwordEncoder, RoleService roleService
    ) {
         this.userService = userService;
         this.uploadFileService = uploadFileService;
-        this.passwordEncoder = passwordEncoder;    }
+        this.passwordEncoder = passwordEncoder; 
+        this.roleService = roleService;
+    }
 
     @RequestMapping("/")
     public String getView(Model model) {
@@ -82,8 +87,11 @@ public class UserController {
     @RequestMapping(value = "/admin/user/update/{id}")
     public String updateUserPage(Model model, @PathVariable long id) {
         User user = this.userService.getUserById(id);
+        List<Role> roles = this.roleService.getAllRoles();
+
         model.addAttribute("newUser", user);
         model.addAttribute("id", id);
+        model.addAttribute("roles", roles);
         return "admin/user/update";
     }
     @RequestMapping(value = "/admin/user/update", method = RequestMethod.POST)
@@ -93,6 +101,9 @@ public class UserController {
             currentUser.setFullName(user.getFullName());
             currentUser.setPhone(user.getPhone());
             currentUser.setAddress(user.getAddress());
+            
+            Role role = this.roleService.getRoleById(user.getRole().getId());
+            currentUser.setRole(role);
 
             this.userService.handleSaveUser(currentUser);
         }
