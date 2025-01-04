@@ -2,7 +2,7 @@ package vn.com.LaptopShop.domain;
 
 import java.util.List;
 
-import jakarta.annotation.Generated;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,7 +17,7 @@ public class Role {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private String name ;
+    private String name;
 
     private String description;
 
