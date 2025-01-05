@@ -23,7 +23,7 @@ public class Product {
 
     private String shortDesc;
 
-    private long quatity;
+    private long quantity;
 
     private long sold;
 
@@ -79,12 +79,12 @@ public class Product {
         this.shortDesc = shortDesc;
     }
 
-    public long getQuatity() {
-        return quatity;
+    public long getQuantity() {
+        return quantity;
     }
 
-    public void setQuatity(long quatity) {
-        this.quatity = quatity;
+    public void setQuantity(long quatity) {
+        this.quantity = quatity;
     }
 
     public long getSold() {
@@ -114,7 +114,7 @@ public class Product {
     @Override
     public String toString() {
         return "Product [id=" + id + ", name=" + name + ", price=" + price + ", image=" + image + ", detailDesc="
-                + detailDesc + ", shortDesc=" + shortDesc + ", quatity=" + quatity + ", sold=" + sold + ", factory="
+                + detailDesc + ", shortDesc=" + shortDesc + ", quantity=" + quantity + ", sold=" + sold + ", factory="
                 + factory + ", target=" + target + "]";
     }
 

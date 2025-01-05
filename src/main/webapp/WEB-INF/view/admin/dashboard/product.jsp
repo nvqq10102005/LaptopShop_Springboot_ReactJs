@@ -32,7 +32,36 @@
                                     <li class="breadcrumb-item "><a href="/admin">Dashboard</a></li>
                                     <li class="breadcrumb-item active">Products</li>
                                 </ol>
-                                <div>hello</div>
+                                <hr />
+                                <table class="table table-hover table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Price</th>
+                                        <th>Factory</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <%-- <c:forEach var="user" items="${users}">
+                                        <tr>
+                                            <th>${user.id}</th>
+                                            <td>${user.email}</td>
+                                            <td>${user.fullName}</td>
+                                            <td>${user.role.name}</td>
+                                            <td>
+                                                <a href="/admin/user/${user.id}" class="btn btn-success">View
+                                                    Details</a>
+                                                <a href="/admin/user/update/${user.id}"
+                                                    class="btn btn-warning mx-2">Update</a>
+                                                <a href="/admin/user/delete/${user.id}"
+                                                    class="btn btn-danger">Delete</a>
+                                            </td>
+                                        </tr>
+                                    </c:forEach> --%>
+                                </tbody>
+                            </table>
                             </div>
                         </main>
                         <jsp:include page="../layout/footer.jsp"/>

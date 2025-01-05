@@ -37,6 +37,7 @@
             <div class="spinner-grow text-primary" role="status"></div>
         </div>
         <!-- Spinner End -->
+        
         <jsp:include page="../layout/header.jsp" />
 
         <!-- Modal Search Start -->
@@ -430,7 +431,7 @@
         <!-- Vesitable Shop Start-->
         <div class="container-fluid vesitable py-5">
             <div class="container py-5">
-                <h1 class="mb-0">Fresh Organic Vegetables</h1>
+                <h1 class="mb-0">Discover Cutting-Edge Laptops</h1>
                 <div class="owl-carousel vegetable-carousel justify-content-center">
                     <div class="border border-primary rounded position-relative vesitable-item">
                         <div class="vesitable-img">
@@ -438,8 +439,8 @@
                         </div>
                         <div class="text-white bg-primary px-3 py-1 rounded position-absolute" style="top: 10px; right: 10px;">Vegetable</div>
                         <div class="p-4 rounded-bottom">
-                            <h4>Parsely</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                            <h4>At Our Store</h4>
+                            <p>Explore the latest in laptop technology with sleek designs, unmatched performance, and advanced features. Whether you’re a gamer, a professional, or a student, our collection offers something for everyone.</p>
                             <div class="d-flex justify-content-between flex-lg-wrap">
                                 <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
                                 <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
@@ -556,9 +557,9 @@
                 <div class="row g-4 align-items-center">
                     <div class="col-lg-6">
                         <div class="py-4">
-                            <h1 class="display-3 text-white">Fresh Exotic Fruits</h1>
-                            <p class="fw-normal display-3 text-dark mb-4">in Our Store</p>
-                            <p class="mb-4 text-dark">The generated Lorem Ipsum is therefore always free from repetition injected humour, or non-characteristic words etc.</p>
+                            <h1 class="display-3 text-white">Discover Cutting-Edge Laptops</h1>
+                            <p class="fw-normal display-3 text-dark mb-4">At Our Store</p>
+                            <p class="mb-4 text-dark">Explore the latest in laptop technology with sleek designs, unmatched performance, and advanced features. Whether you’re a gamer, a professional, or a student, our collection offers something for everyone.</p>
                             <a href="#" class="banner-btn btn border-2 border-white rounded-pill text-dark py-3 px-5">BUY</a>
                         </div>
                     </div>
@@ -568,8 +569,8 @@
                             <div class="d-flex align-items-center justify-content-center bg-white rounded-circle position-absolute" style="width: 140px; height: 140px; top: 0; left: 0;">
                                 <h1 style="font-size: 100px;">1</h1>
                                 <div class="d-flex flex-column">
-                                    <span class="h2 mb-0">50$</span>
-                                    <span class="h4 text-muted mb-0">kg</span>
+                                    <span class="h2 mb-0">500$</span>
+                                    <span class="h4 text-muted mb-0"></span>
                                 </div>
                             </div>
                         </div>
