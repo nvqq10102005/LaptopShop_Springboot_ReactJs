@@ -40,14 +40,6 @@ public class UserController {
         this.roleService = roleService;
     }
 
-    @RequestMapping("/")
-    public String getView(Model model) {
-        List<User> lUsers = this.userService.getAllUsersByEmail("quynv@techzone.io.vn");
-        System.out.println(lUsers);
-        model.addAttribute("hello", "test");
-        model.addAttribute("hoidanit", "from controller");
-        return "hello";
-    }
 
     @RequestMapping("/admin/user")
     public String getUserPage(Model model) {
@@ -101,7 +93,7 @@ public class UserController {
             currentUser.setFullName(user.getFullName());
             currentUser.setPhone(user.getPhone());
             currentUser.setAddress(user.getAddress());
-            
+
             Role role = this.roleService.getRoleById(user.getRole().getId());
             currentUser.setRole(role);
 
