@@ -6,6 +6,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import jakarta.validation.Valid;
 import vn.com.LaptopShop.domain.Role;
 import vn.com.LaptopShop.domain.User;
 import vn.com.LaptopShop.service.RoleService;
@@ -57,9 +60,20 @@ public class UserController {
 
     @PostMapping("/admin/user/create")
     public String createUserPage(Model model, 
-    @ModelAttribute("newUser") User user,
+    @ModelAttribute("newUser") @Valid User user,
+    BindingResult userBindingResult,
     @RequestParam("laptopShopFile") MultipartFile file
     ) {
+
+        List<FieldError> errors = userBindingResult.getFieldErrors();
+        for (FieldError error : errors ) {
+        System.out.println (error.getField() + " - " + error.getDefaultMessage());
+        }
+        
+        if(userBindingResult.hasErrors()){
+            return "admin/user/create";
+        }
+
         String avatar = this.uploadFileService.handleSaveUploadFile(file,"avatar");
         String hashPassword = this.passwordEncoder.encode(user.getPassword());
 

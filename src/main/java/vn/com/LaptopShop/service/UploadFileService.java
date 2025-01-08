@@ -23,7 +23,8 @@ public class UploadFileService {
         try {
             byte[] bytes;
             bytes = file.getBytes();
-        
+            if(file.isEmpty())
+                return"";
             String rootPath = this.servletContext.getRealPath("/resources/images");
 
             File dir = new File(rootPath + File.separator + targetFolder);

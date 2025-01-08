@@ -17,7 +17,7 @@
 
                 <!-- <link href="/css/demo.css" rel="stylesheet"> -->
                 <link rel="stylesheet" href="/css/styles.css">
-                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
                 <script>
                     $(document).ready(() => {
@@ -50,23 +50,57 @@
                                             <h3>Create a user</h3>
                                             <hr />
                                             <form:form method="post" action="/admin/product/create"
-                                                modelAttribute="newProduct" class="row"
-                                                enctype="multipart/form-data">
+                                                modelAttribute="newProduct" class="row" enctype="multipart/form-data">
+                                                <c:set var="errorName">
+                                                    <form:errors path="name" cssClass="invalid-feedback" />
+                                                </c:set>
+                                                <c:set var="errorPrice">
+                                                    <form:errors path="price" cssClass="invalid-feedback" />
+                                                </c:set>
+                                                <c:set var="errorDetailDesc">
+                                                    <form:errors path="detailDesc" cssClass="invalid-feedback" />
+                                                </c:set>
+                                                <c:set var="errorShortDesc">
+                                                    <form:errors path="shortDesc" cssClass="invalid-feedback" />
+                                                </c:set>
+                                                <c:set var="errorQuantity">
+                                                    <form:errors path="quantity" cssClass="invalid-feedback" />
+                                                </c:set>
                                                 <div class="mb-3 col-12 col-md-6">
                                                     <label class="form-label">Name:</label>
-                                                    <form:input type="email" class="form-control" path="name" />
+                                                    <form:input type="text"
+                                                        class="form-control ${not empty errorName ? 'is-invalid' : ''}"
+                                                        path="name" />
+                                                    ${errorName}
                                                 </div>
                                                 <div class="mb-3 col-12 col-md-6">
                                                     <label class="form-label">Price:</label>
-                                                    <form:input type="password" class="form-control" path="price" />
+                                                    <form:input type="number"
+                                                        class="form-control ${not empty errorPrice ? 'is-invalid' : ''}"
+                                                        path="price" />
+                                                    ${errorPrice}
+                                                </div>
+
+                                                <div class="mb-3 col-12">
+                                                    <label class="form-label">Detail description:</label>
+                                                    <form:textarea type="text"
+                                                        class="form-control ${not empty errorDetailDesc ? 'is-invalid' : ''}"
+                                                        path="detailDesc" />
+                                                    ${errorDetailDesc}
                                                 </div>
                                                 <div class="mb-3 col-12 col-md-6">
-                                                    <label class="form-label">Detail description :</label>
-                                                    <form:input type="text" class="form-control" path="detailDesc" />
+                                                    <label class="form-label">Short description:</label>
+                                                    <form:input type="text"
+                                                        class="form-control ${not empty errorShortDesc ? 'is-invalid' : ''}"
+                                                        path="shortDesc" />
+                                                    ${errorShortDesc}
                                                 </div>
                                                 <div class="mb-3 col-12 col-md-6">
-                                                    <label class="form-label">Quality:</label>
-                                                    <form:input type="text" class="form-control" path="quantity" />
+                                                    <label class="form-label">Quantity:</label>
+                                                    <form:input type="number"
+                                                        class="form-control ${not empty errorQuantity ? 'is-invalid' : ''}"
+                                                        path="quantity" />
+                                                    ${errorQuantity}
                                                 </div>
 
                                                 <div class="mb-3 col-12 col-md-6">
@@ -84,26 +118,27 @@
                                                     <label class="form-label">Target:</label>
                                                     <form:select class="form-select" path="target">
                                                         <form:option value="GAMING">GAMING</form:option>
-                                                        <form:option value="Office/Business">Office/Business</form:option>
+                                                        <form:option value="Office/Business">Office/Business
+                                                        </form:option>
                                                         <form:option value="thin and light">thin and light</form:option>
                                                         <form:option value="DESIGNER">DESIGNER</form:option>
                                                         <form:option value="OLD-PRODUCT">OLD PRODUCT</form:option>
-                                                        
+
                                                     </form:select>
                                                 </div>
                                                 <div class="mb-3 col-12 col-md-6">
                                                     <label for="avatarFile" class="form-label">image:</label>
                                                     <input class="form-control" type="file" id="avatarFile"
-                                                        accept=".png, .jpg, .jpeg"
-                                                        name="laptopShopFile">
+                                                        accept=".png, .jpg, .jpeg" name="laptopShopFile">
                                                 </div>
                                                 <div class="col-12 mb-3">
                                                     <img style="max-height: 250px; display: none;" alt="avatar preview"
                                                         id="avatarPreview" />
                                                 </div>
                                                 <div class="col-12 mb-5">
-                                                <a href="/admin/user" class="btn btn-secondary col-2">Back</a>
-                                                    <button type="submit" class="btn btn-primary float-end">Create</button>
+                                                    <a href="/admin/user" class="btn btn-secondary col-2">Back</a>
+                                                    <button type="submit"
+                                                        class="btn btn-primary float-end">Create</button>
                                                 </div>
                                             </form:form>
 
