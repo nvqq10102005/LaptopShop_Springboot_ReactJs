@@ -33,6 +33,8 @@ public class WedMvcConfig implements WebMvcConfigurer {
         registry.addResourceHandler("/js/**").addResourceLocations("/resources/js/");
         registry.addResourceHandler("/img/**").addResourceLocations("/resources/img/");
         registry.addResourceHandler("/client/**").addResourceLocations("/resources/client/");
+        registry.addResourceHandler("/images/product/**").addResourceLocations("file:/C:/InformationTechnology/LaptopShop_Springboot_ReactJs/src/main/webapp/resources/images/product/");
+        registry.addResourceHandler("/images/avatar/**").addResourceLocations("file:/C:/InformationTechnology/LaptopShop_Springboot_ReactJs/src/main/webapp/resources/images/avatar/");
         registry.addResourceHandler("/product/img/**").addResourceLocations("/resources/client/img/");
     }
 

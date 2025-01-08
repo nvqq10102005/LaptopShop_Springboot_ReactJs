@@ -24,10 +24,10 @@
                     <div id="layoutSidenav_content">
                         <main>
                             <div class="container-fluid px-4">
-                                <h1 class="mt-4">Update Users</h1>
+                                <h1 class="mt-4">Product Detail</h1>
                                 <ol class="breadcrumb mb-4">
                                     <li class="breadcrumb-item "><a href="/admin">Dashboard</a></li>
-                                    <li class="breadcrumb-item active">update Users</li>
+                                    <li class="breadcrumb-item active">product-detail</li>
                                 </ol>
 
                                 <body>
@@ -37,35 +37,36 @@
                                             <div class="row">
                                                 <div class="col-12 mx-auto">
                                                     <div class="d-flex justify-content-between">
-                                                        <h3>TABLE DETAILS ${id}</h3>
+                                                        <h3>TABLE PRODUCT DETAILS ${id}</h3>
                                                     </div>
                                                     <hr />
                                                     <div class="card mb-3">
                                                         <div class="row g-0">
                                                             <div class="col-md-4">
-                                                                <img src="/images/avatar/${user.avatar}"
-                                                                    class="img-fluid rounded-start"
-                                                                    alt="${user.fullName}">
+                                                                <img src="/images/product/${product.image}"
+                                                                    class="img-fluid rounded-start" alt="${products}">
                                                             </div>
                                                             <div class="col-md-8">
                                                                 <div class="card-body">
                                                                     <div class="card">
                                                                         <div class="card-header">
-                                                                            User Info
+                                                                            Product information
                                                                         </div>
                                                                         <ul class="list-group list-group-flush">
-                                                                            <li class="list-group-item">ID: ${user.id}
+                                                                            <li class="list-group-item">ID:
+                                                                                ${product.id}
                                                                             </li>
-                                                                            <li class="list-group-item">Email:
-                                                                                ${user.email}</li>
-                                                                            <li class="list-group-item">Fullname:
-                                                                                ${user.fullName}</li>
-                                                                            <li class="list-group-item">PhoneNumber:
-                                                                                ${user.phone}</li>
-                                                                            <li class="list-group-item">Address:
-                                                                                ${user.address}</li>
-                                                                            <li class="list-group-item">Role:
-                                                                                ${user.role.name}</li>
+                                                                            <li class="list-group-item">name:
+                                                                                ${product.name}</li>
+                                                                            <li class="list-group-item">Price:
+                                                                                ${product.price}</li>
+
+                                                                            <li class="list-group-item">DECS:
+                                                                                ${product.detailDesc}</li>
+                                                                            <li class="list-group-item">Quantity:
+                                                                                ${product.quantity}</li>
+                                                                            <li class="list-group-item">Factory:
+                                                                                ${product.factory}</li>
                                                                         </ul>
                                                                     </div>
                                                                     <h5 class="card-title mt-4">Card title</h5>
@@ -85,10 +86,11 @@
                                                 </div>
 
                                             </div>
-                                            <a href="/admin/user/update/${user.id}"
+                                            <a href="/admin/product/update/${product.id}"
                                                 class="btn btn-warning mx-2">Update</a>
-                                            <a href="/admin/user/delete/${user.id}" class="btn btn-danger">Delete</a>
-                                            <a href="/admin/user" class="btn btn-secondary col-3 float-end">BACK</a>
+                                            <a href="/admin/product/delete/${product.id}"
+                                                class="btn btn-danger">Delete</a>
+                                            <a href="/admin/product" class="btn btn-secondary col-3 float-end">BACK</a>
                                         </div>
 
                                     </body>
