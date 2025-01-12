@@ -6,7 +6,7 @@
 
             <head>
                 <meta charset="utf-8">
-                <title>Fruitables - Vegetable Website Template</title>
+                <title>${product.name} - LaptopNow</title>
                 <meta content="width=device-width, initial-scale=1.0" name="viewport">
                 <meta content="" name="keywords">
                 <meta content="" name="description">
@@ -90,15 +90,15 @@
                                     <div class="col-lg-6">
                                         <div class="border rounded">
                                             <a href="#">
-                                                <img src="img/single-item.jpg" class="img-fluid rounded"
+                                                <img src="/images/product/${product.image}" class="img-fluid rounded"
                                                     alt="Image800x800">
                                             </a>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
-                                        <h4 class="fw-bold mb-3">Brocoli</h4>
-                                        <p class="mb-3">Category: Vegetables</p>
-                                        <h5 class="fw-bold mb-3">3,35 $</h5>
+                                        <h4 class="fw-bold mb-3">${product.name}</h4>
+                                        <p class="mb-3">${product.factory}</p>
+                                        <h5 class="fw-bold mb-3">${product.price} $</h5>
                                         <div class="d-flex mb-4">
                                             <i class="fa fa-star text-secondary"></i>
                                             <i class="fa fa-star text-secondary"></i>
@@ -106,12 +106,8 @@
                                             <i class="fa fa-star text-secondary"></i>
                                             <i class="fa fa-star"></i>
                                         </div>
-                                        <p class="mb-4">The generated Lorem Ipsum is therefore always free from
-                                            repetition injected
-                                            humour, or non-characteristic words etc.</p>
-                                        <p class="mb-4">Susp endisse ultricies nisi vel quam suscipit. Sabertooth
-                                            peacock flounder;
-                                            chain pickerel hatchetfish, pencilfish snailfish</p>
+                                        <p class="mb-4">${product.target}</p>
+                                        <p class="mb-4">${product.detailDesc}</p>
                                         <div class="input-group quantity mb-5" style="width: 100px;">
                                             <div class="input-group-btn">
                                                 <button class="btn btn-sm btn-minus rounded-circle bg-light border">
@@ -515,8 +511,7 @@
                                     <div class="vesitable-img">
                                         <img src="img/vegetable-item-1.png" class="img-fluid w-100 rounded-top" alt="">
                                     </div>
-                                    <div class="text-white bg-primary px-3 py-1 rounded position-absolute"
-                                        style="top: 10px; right: 10px;">Vegetable</div>
+
                                     <div class="p-4 pb-0 rounded-bottom">
                                         <h4>Parsely</h4>
                                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
@@ -534,8 +529,7 @@
                                         <img src="img/vegetable-item-3.png" class="img-fluid w-100 rounded-top bg-light"
                                             alt="">
                                     </div>
-                                    <div class="text-white bg-primary px-3 py-1 rounded position-absolute"
-                                        style="top: 10px; right: 10px;">Vegetable</div>
+
                                     <div class="p-4 pb-0 rounded-bottom">
                                         <h4>Banana</h4>
                                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
@@ -552,8 +546,7 @@
                                     <div class="vesitable-img">
                                         <img src="img/vegetable-item-4.jpg" class="img-fluid w-100 rounded-top" alt="">
                                     </div>
-                                    <div class="text-white bg-primary px-3 py-1 rounded position-absolute"
-                                        style="top: 10px; right: 10px;">Vegetable</div>
+
                                     <div class="p-4 pb-0 rounded-bottom">
                                         <h4>Bell Papper</h4>
                                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
@@ -570,8 +563,7 @@
                                     <div class="vesitable-img">
                                         <img src="img/vegetable-item-5.png" class="img-fluid w-100 rounded-top" alt="">
                                     </div>
-                                    <div class="text-white bg-primary px-3 py-1 rounded position-absolute"
-                                        style="top: 10px; right: 10px;">Vegetable</div>
+
                                     <div class="p-4 pb-0 rounded-bottom">
                                         <h4>Potatoes</h4>
                                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
@@ -588,8 +580,7 @@
                                     <div class="vesitable-img">
                                         <img src="img/vegetable-item-6.png" class="img-fluid w-100 rounded-top" alt="">
                                     </div>
-                                    <div class="text-white bg-primary px-3 py-1 rounded position-absolute"
-                                        style="top: 10px; right: 10px;">Vegetable</div>
+
                                     <div class="p-4 pb-0 rounded-bottom">
                                         <h4>Parsely</h4>
                                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
@@ -606,8 +597,7 @@
                                     <div class="vesitable-img">
                                         <img src="img/vegetable-item-5.png" class="img-fluid w-100 rounded-top" alt="">
                                     </div>
-                                    <div class="text-white bg-primary px-3 py-1 rounded position-absolute"
-                                        style="top: 10px; right: 10px;">Vegetable</div>
+
                                     <div class="p-4 pb-0 rounded-bottom">
                                         <h4>Potatoes</h4>
                                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
@@ -624,8 +614,7 @@
                                     <div class="vesitable-img">
                                         <img src="img/vegetable-item-6.png" class="img-fluid w-100 rounded-top" alt="">
                                     </div>
-                                    <div class="text-white bg-primary px-3 py-1 rounded position-absolute"
-                                        style="top: 10px; right: 10px;">Vegetable</div>
+
                                     <div class="p-4 pb-0 rounded-bottom">
                                         <h4>Parsely</h4>
                                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
