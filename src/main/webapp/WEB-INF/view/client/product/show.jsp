@@ -85,6 +85,15 @@
                 <div class="container-fluid py-5 mt-5">
                     <div class="container py-5">
                         <div class="row g-4 mb-5">
+                            <div class="product-breadcrumb">
+                                <nav aria-label="breadcrumb">
+                                    <ol>
+                                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">/ Product detail</li>
+                                    </ol>
+
+                                </nav>
+                            </div>
                             <div class="col-lg-8 col-xl-9">
                                 <div class="row g-4">
                                     <div class="col-lg-6">
@@ -326,154 +335,32 @@
                                                 </li>
                                                 <li>
                                                     <div class="d-flex justify-content-between fruite-name">
-                                                        <a href="#"><i class="fas fa-apple-alt me-2"></i>Oranges</a>
+                                                        <a href="#"><i class="fas fa-apple-alt me-2"></i>Dell</a>
                                                         <span>(5)</span>
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div class="d-flex justify-content-between fruite-name">
-                                                        <a href="#"><i class="fas fa-apple-alt me-2"></i>Strawbery</a>
+                                                        <a href="#"><i class="fas fa-apple-alt me-2"></i>Asus</a>
                                                         <span>(2)</span>
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div class="d-flex justify-content-between fruite-name">
-                                                        <a href="#"><i class="fas fa-apple-alt me-2"></i>Banana</a>
+                                                        <a href="#"><i class="fas fa-apple-alt me-2"></i>Lenovo</a>
                                                         <span>(8)</span>
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div class="d-flex justify-content-between fruite-name">
-                                                        <a href="#"><i class="fas fa-apple-alt me-2"></i>Pumpkin</a>
+                                                        <a href="#"><i class="fas fa-apple-alt me-2"></i>Acer</a>
                                                         <span>(5)</span>
                                                     </div>
                                                 </li>
                                             </ul>
                                         </div>
                                     </div>
-                                    <div class="col-lg-12">
-                                        <h4 class="mb-4">Featured products</h4>
-                                        <div class="d-flex align-items-center justify-content-start">
-                                            <div class="rounded" style="width: 100px; height: 100px;">
-                                                <img src="img/featur-1.jpg" class="img-fluid rounded"
-                                                    alt="Image500x400">
-                                            </div>
-                                            <div>
-                                                <h6 class="mb-2">Big Banana</h6>
-                                                <div class="d-flex mb-2">
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                                <div class="d-flex mb-2">
-                                                    <h5 class="fw-bold me-2">2.99 $</h5>
-                                                    <h5 class="text-danger text-decoration-line-through">4.11 $</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex align-items-center justify-content-start">
-                                            <div class="rounded" style="width: 100px; height: 100px;">
-                                                <img src="img/featur-2.jpg" class="img-fluid rounded" alt="">
-                                            </div>
-                                            <div>
-                                                <h6 class="mb-2">Big Banana</h6>
-                                                <div class="d-flex mb-2">
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                                <div class="d-flex mb-2">
-                                                    <h5 class="fw-bold me-2">2.99 $</h5>
-                                                    <h5 class="text-danger text-decoration-line-through">4.11 $</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex align-items-center justify-content-start">
-                                            <div class="rounded" style="width: 100px; height: 100px;">
-                                                <img src="img/featur-3.png" class="img-fluid rounded" alt="">
-                                            </div>
-                                            <div>
-                                                <h6 class="mb-2">Big Banana</h6>
-                                                <div class="d-flex mb-2">
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                                <div class="d-flex mb-2">
-                                                    <h5 class="fw-bold me-2">2.99 $</h5>
-                                                    <h5 class="text-danger text-decoration-line-through">4.11 $</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex align-items-center justify-content-start">
-                                            <div class="rounded me-4" style="width: 100px; height: 100px;">
-                                                <img src="img/vegetable-item-4.jpg" class="img-fluid rounded" alt="">
-                                            </div>
-                                            <div>
-                                                <h6 class="mb-2">Big Banana</h6>
-                                                <div class="d-flex mb-2">
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                                <div class="d-flex mb-2">
-                                                    <h5 class="fw-bold me-2">2.99 $</h5>
-                                                    <h5 class="text-danger text-decoration-line-through">4.11 $</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex align-items-center justify-content-start">
-                                            <div class="rounded me-4" style="width: 100px; height: 100px;">
-                                                <img src="img/vegetable-item-5.png" class="img-fluid rounded" alt="">
-                                            </div>
-                                            <div>
-                                                <h6 class="mb-2">Big Banana</h6>
-                                                <div class="d-flex mb-2">
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                                <div class="d-flex mb-2">
-                                                    <h5 class="fw-bold me-2">2.99 $</h5>
-                                                    <h5 class="text-danger text-decoration-line-through">4.11 $</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex align-items-center justify-content-start">
-                                            <div class="rounded me-4" style="width: 100px; height: 100px;">
-                                                <img src="img/vegetable-item-6.png" class="img-fluid rounded" alt="">
-                                            </div>
-                                            <div>
-                                                <h6 class="mb-2">Big Banana</h6>
-                                                <div class="d-flex mb-2">
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star text-secondary"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
-                                                <div class="d-flex mb-2">
-                                                    <h5 class="fw-bold me-2">2.99 $</h5>
-                                                    <h5 class="text-danger text-decoration-line-through">4.11 $</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex justify-content-center my-4">
-                                            <a href="#"
-                                                class="btn border border-secondary px-4 py-3 rounded-pill text-primary w-100">Vew
-                                                More</a>
-                                        </div>
-                                    </div>
+
                                     <div class="col-lg-12">
                                         <div class="position-relative">
                                             <img src="img/banner-fruits.jpg" class="img-fluid w-100 rounded" alt="">
@@ -500,7 +387,7 @@
                                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
                                             incididunt</p>
                                         <div class="d-flex justify-content-between flex-lg-wrap">
-                                            <p class="text-dark fs-5 fw-bold">$4.99 / kg</p>
+                                            <p class="text-dark fs-5 fw-bold">${product.price} / kg</p>
                                             <a href="#"
                                                 class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"><i
                                                     class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
@@ -517,7 +404,7 @@
                                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
                                             incididunt</p>
                                         <div class="d-flex justify-content-between flex-lg-wrap">
-                                            <p class="text-dark fs-5 fw-bold">$4.99 / kg</p>
+                                            <p class="text-dark fs-5 fw-bold">${product.price} / kg</p>
                                             <a href="#"
                                                 class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"><i
                                                     class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
@@ -535,7 +422,7 @@
                                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
                                             incididunt</p>
                                         <div class="d-flex justify-content-between flex-lg-wrap">
-                                            <p class="text-dark fs-5 fw-bold">$7.99 / kg</p>
+                                            <p class="text-dark fs-5 fw-bold">${product.price} / kg</p>
                                             <a href="#"
                                                 class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"><i
                                                     class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
@@ -552,7 +439,7 @@
                                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
                                             incididunt</p>
                                         <div class="d-flex justify-content-between flex-lg-wrap">
-                                            <p class="text-dark fs-5 fw-bold">$7.99 / kg</p>
+                                            <p class="text-dark fs-5 fw-bold">${product.price} / kg</p>
                                             <a href="#"
                                                 class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"><i
                                                     class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
@@ -569,7 +456,7 @@
                                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
                                             incididunt</p>
                                         <div class="d-flex justify-content-between flex-lg-wrap">
-                                            <p class="text-dark fs-5 fw-bold">$7.99 / kg</p>
+                                            <p class="text-dark fs-5 fw-bold">${product.price} / kg</p>
                                             <a href="#"
                                                 class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"><i
                                                     class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
@@ -586,7 +473,7 @@
                                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
                                             incididunt</p>
                                         <div class="d-flex justify-content-between flex-lg-wrap">
-                                            <p class="text-dark fs-5 fw-bold">$7.99 / kg</p>
+                                            <p class="text-dark fs-5 fw-bold">${product.price} / kg</p>
                                             <a href="#"
                                                 class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"><i
                                                     class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
@@ -603,7 +490,7 @@
                                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
                                             incididunt</p>
                                         <div class="d-flex justify-content-between flex-lg-wrap">
-                                            <p class="text-dark fs-5 fw-bold">$7.99 / kg</p>
+                                            <p class="text-dark fs-5 fw-bold">${product.price} / kg</p>
                                             <a href="#"
                                                 class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"><i
                                                     class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
@@ -620,7 +507,7 @@
                                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te
                                             incididunt</p>
                                         <div class="d-flex justify-content-between flex-lg-wrap">
-                                            <p class="text-dark fs-5 fw-bold">$7.99 / kg</p>
+                                            <p class="text-dark fs-5 fw-bold">${product.price} / kg</p>
                                             <a href="#"
                                                 class="btn border border-secondary rounded-pill px-3 py-1 mb-4 text-primary"><i
                                                     class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>

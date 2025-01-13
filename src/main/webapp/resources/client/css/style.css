@@ -29,6 +29,11 @@
 
 
 /*** Button Start ***/
+.product-breadcrumb li {
+    list-style: none;
+    display: inline;
+}
+
 .btn {
     font-weight: 600;
     transition: .5s;
