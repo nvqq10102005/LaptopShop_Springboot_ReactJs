@@ -11,10 +11,10 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import vn.com.LaptopShop.service.validator.StrongPassword;
 
 @Entity
 @Table(name="users")
@@ -30,6 +30,7 @@ public class User {
 
     @NotNull
     @Size(min=3,message = "Password must not be less than 3 characters")
+    @StrongPassword(message = "password is strong")
     private String password;
     @NotNull
     @Size(min = 3,message = "fullName must not be less than 3 characters")

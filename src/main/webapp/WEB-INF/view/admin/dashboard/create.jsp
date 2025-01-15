@@ -71,14 +71,14 @@
                                                     <form:input type="text"
                                                         class="form-control ${not empty errorName ? 'is-invalid' : ''}"
                                                         path="name" />
-                                                    ${errorName}
+                                                    <form:errors path="name" cssClass="invalid-feedback" />
                                                 </div>
                                                 <div class="mb-3 col-12 col-md-6">
                                                     <label class="form-label">Price:</label>
                                                     <form:input type="number"
                                                         class="form-control ${not empty errorPrice ? 'is-invalid' : ''}"
                                                         path="price" />
-                                                    ${errorPrice}
+                                                    <form:errors path="price" cssClass="invalid-feedback" />
                                                 </div>
 
                                                 <div class="mb-3 col-12">
@@ -86,21 +86,21 @@
                                                     <form:textarea type="text"
                                                         class="form-control ${not empty errorDetailDesc ? 'is-invalid' : ''}"
                                                         path="detailDesc" />
-                                                    ${errorDetailDesc}
+                                                    <form:errors path="detailDesc" cssClass="invalid-feedback" />
                                                 </div>
                                                 <div class="mb-3 col-12 col-md-6">
                                                     <label class="form-label">Short description:</label>
                                                     <form:input type="text"
                                                         class="form-control ${not empty errorShortDesc ? 'is-invalid' : ''}"
                                                         path="shortDesc" />
-                                                    ${errorShortDesc}
+                                                    <form:errors path="shortDesc" cssClass="invalid-feedback" />
                                                 </div>
                                                 <div class="mb-3 col-12 col-md-6">
                                                     <label class="form-label">Quantity:</label>
                                                     <form:input type="number"
                                                         class="form-control ${not empty errorQuantity ? 'is-invalid' : ''}"
                                                         path="quantity" />
-                                                    ${errorQuantity}
+                                                    <form:errors path="quantity" cssClass="invalid-feedback" />
                                                 </div>
 
                                                 <div class="mb-3 col-12 col-md-6">

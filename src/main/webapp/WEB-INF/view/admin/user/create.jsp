@@ -61,7 +61,7 @@
                                                     <form:input type="email"
                                                         class="form-control ${not empty errorsEmail ? 'is-invalid-feedback' : '' }"
                                                         path="email" />
-                                                    ${errorsEmail}
+                                                    <form:errors path="email" cssClass="invalid-feedback" />
 
                                                 </div>
                                                 <div class="mb-3 col-12 col-md-6">
@@ -72,7 +72,7 @@
                                                     <form:input type="password"
                                                         class="form-control ${not empty errorsPassword ? 'is-invalid-feedback' : '' }"
                                                         path="password" />
-                                                    ${errorsPassword}
+                                                    <form:errors path="password" cssClass="invalid-feedback" />
 
 
                                                 </div>
@@ -88,7 +88,7 @@
                                                     <form:input type="text"
                                                         class="form-control ${not empty errorsPassword ? 'is-invalid-feedback' : '' }"
                                                         path="fullName" />
-                                                    ${errorsFullName}
+                                                    <form:errors path="fullName" cssClass="invalid-feedback" />
                                                 </div>
                                                 <div class="mb-3 col-12">
                                                     <label class="form-label">Address:</label>
