@@ -45,10 +45,10 @@ public class HomepageController {
         model.addAttribute("registerUser",new RegisterDTO() );
         return "client/auth/register";
     }
-    @GetMapping("/login")
+    @GetMapping("/login-account")
     public String getLoginPage(Model model){
         
-        return "client/auth/login";
+        return "client/auth/login-account";
     }
 
 
@@ -71,7 +71,7 @@ public class HomepageController {
         user.setRole(this.userService.getRoleByName("USER"));
         // save
         this.userService.handleSaveUser(user);
-        return "redirect:/login";
+        return "redirect:/login-account";
 
     }
     
