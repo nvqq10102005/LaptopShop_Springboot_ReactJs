@@ -12,24 +12,35 @@
                 <meta name="author" content="" />
                 <title>Login - Laptopshop</title>
                 <link href="/css/styles.css" rel="stylesheet" />
+                <!-- Customized Bootstrap Stylesheet -->
+                <link href="/client/css/bootstrap.min.css" rel="stylesheet">
+
+                <!-- Template Stylesheet -->
+                <link href="/client/css/style.css" rel="stylesheet">
                 <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
             </head>
 
-            <body class="bg-primary">
+            <body class="bg-white bg-opacity-50">
                 <div id="layoutAuthentication">
                     <div id="layoutAuthentication_content">
                         <main>
-                            <div class="container">
+                            <jsp:include page="../layout/header.jsp" />
+                            <div class="container mt-4">
                                 <div class="row justify-content-center">
                                     <div class="col-lg-5">
                                         <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                            <div class="card-header">
-                                                <h3 class="text-center font-weight-light my-4">Login</h3>
+                                            <div class="card-header mt-4">
+                                                <h1 class="text-center font-weight-light my-5">Login</h1>
+
                                             </div>
                                             <div class="card-body">
                                                 <form method="post" action="/perform-login">
                                                     <c:if test="${param.error != null}">
                                                         <div class="my-2" style="color: red;">Invalid email or password.
+                                                        </div>
+                                                    </c:if>
+                                                    <c:if test="${param.logout != null}">
+                                                        <div class="my-2" style="color: green">Logout successfully.
                                                         </div>
                                                     </c:if>
                                                     <div class="form-floating mb-3">
@@ -47,8 +58,9 @@
                                                             value="${_csrf.token}" />
                                                     </div>
                                                     <div
-                                                        class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                        <button class="btn btn-primary" type="submit">Login</button>
+                                                        class="d-flex align-items-center justify-content-between mt-4 mb-0 col-12">
+                                                        <button class="btn btn-danger" type="submit"
+                                                            style="width: 100%;">Login</button>
                                                     </div>
                                                 </form>
                                             </div>
@@ -64,9 +76,19 @@
                     </div>
 
                 </div>
+                <jsp:include page="../layout/footer.jsp" />
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
                     crossorigin="anonymous"></script>
                 <script src="/js/scripts.js"></script>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+                <script src="/client/lib/easing/easing.min.js"></script>
+                <script src="/client/lib/waypoints/waypoints.min.js"></script>
+                <script src="/client/lib/lightbox/js/lightbox.min.js"></script>
+                <script src="/client/lib/owlcarousel/owl.carousel.min.js"></script>
+
+                <!-- Template Javascript -->
+                <script src="/client/js/main.js"></script>
             </body>
 
             </html>

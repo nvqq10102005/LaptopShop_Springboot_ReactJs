@@ -12826,7 +12826,8 @@ body {
 }
 
 .sb-nav-fixed #layoutSidenav #layoutSidenav_nav .sb-sidenav {
-    padding-top: 56px;
+    padding-top: 0px;
+    margin-top: 56px;
 }
 
 .sb-nav-fixed #layoutSidenav #layoutSidenav_nav .sb-sidenav .sb-sidenav-menu {
@@ -12934,6 +12935,7 @@ body {
 .sb-sidenav .sb-sidenav-footer {
     padding: 0.75rem;
     flex-shrink: 0;
+    margin-bottom: 3rem;
 }
 
 .sb-sidenav-dark {

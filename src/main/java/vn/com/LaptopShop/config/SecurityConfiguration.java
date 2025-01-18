@@ -55,7 +55,7 @@ public class SecurityConfiguration {
                 .dispatcherTypeMatchers(DispatcherType.FORWARD,
                                 DispatcherType.INCLUDE) .permitAll()
 
-                .requestMatchers("/","/login", "/client/**","/product/**", "/css/**", "/js/**", "/images/**").permitAll()
+                .requestMatchers("/","/login","register", "/client/**","/product/**", "/css/**", "/js/**", "/images/**").permitAll()
                 .requestMatchers("/admin/**").hasRole("ADMIN")
                   .anyRequest().authenticated())
 
@@ -64,7 +64,13 @@ public class SecurityConfiguration {
                         .loginProcessingUrl("/perform-login")
                         .failureUrl("/login-account?error=true")
                         .successHandler(successHandler())
-                        .permitAll());
+                        .permitAll())
+            .logout(logout -> logout
+            .logoutUrl("/logout")
+            .logoutSuccessUrl("/login-account?logout=true") .permitAll() 
+        ).exceptionHandling(ex -> ex
+            .accessDeniedPage("/access-denied")
+        );
 
         return http.build();
     }

@@ -12,18 +12,24 @@
                 <meta name="author" content="" />
                 <title>Register - Laptopshop</title>
                 <link href="/css/styles.css" rel="stylesheet" />
+                <!-- Customized Bootstrap Stylesheet -->
+                <link href="/client/css/bootstrap.min.css" rel="stylesheet">
+
+                <!-- Template Stylesheet -->
+                <link href="/client/css/style.css" rel="stylesheet">
                 <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
             </head>
+            <jsp:include page="../layout/header.jsp" />
 
             <body class="bg-light bg-opacity-75">
                 <div id="layoutAuthentication">
                     <div id="layoutAuthentication_content">
                         <main>
-                            <div class="container">
+                            <div class="container mt-5">
                                 <div class="row justify-content-center">
                                     <div class="col-lg-7">
                                         <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                            <div class="card-header">
+                                            <div class="card-header mt-5">
                                                 <h3 class="text-center font-weight-light my-4">Create Account</h3>
                                             </div>
                                             <div class="card-body">
@@ -86,7 +92,7 @@
                                                     </div>
                                                     <div class="mt-4 mb-0">
                                                         <div class="d-grid">
-                                                            <button class="btn btn-primary btn-block">
+                                                            <button class="btn btn-warning btn-block">
                                                                 Create Account
                                                             </button>
                                                         </div>
@@ -105,9 +111,19 @@
                         </main>
                     </div>
                 </div>
+                <jsp:include page="../layout/footer.jsp" />
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
                     crossorigin="anonymous"></script>
                 <script src="/js/scripts.js"></script>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+                <script src="/client/lib/easing/easing.min.js"></script>
+                <script src="/client/lib/waypoints/waypoints.min.js"></script>
+                <script src="/client/lib/lightbox/js/lightbox.min.js"></script>
+                <script src="/client/lib/owlcarousel/owl.carousel.min.js"></script>
+
+                <!-- Template Javascript -->
+                <script src="/client/js/main.js"></script>
             </body>
 
             </html>
