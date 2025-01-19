@@ -3,6 +3,7 @@ package vn.com.LaptopShop.config;
 import java.io.IOException;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.DefaultRedirectStrategy;
 import org.springframework.security.web.RedirectStrategy;
@@ -12,8 +13,12 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import vn.com.LaptopShop.domain.User;
+import vn.com.LaptopShop.service.UserService;
 
 public class CustomSuccessHandler implements AuthenticationSuccessHandler {
+    @Autowired
+    private UserService userService;
     
     protected String determineTargetUrl(final Authentication authentication) {
         Map<String, String> roleTargetUrlMap = Map.of(
@@ -31,12 +36,21 @@ public class CustomSuccessHandler implements AuthenticationSuccessHandler {
 
     }
 
-    protected void clearAuthenticationAttributes(HttpServletRequest request) {
+    protected void clearAuthenticationAttributes(HttpServletRequest request,Authentication authentication) {
         HttpSession session = request.getSession(false);
         if (session == null) {
             return;
         }
         session.removeAttribute("SPRING_SECURITY_LAST_EXCEPTION");
+        String username = authentication.getName();
+
+        User user = this.userService.getUserByEmail(username);
+        if(user != null){
+            session.setAttribute("username", user.getFullName());
+            session.setAttribute("avatar", user.getAvatar());
+        }
+        
+        
     }
 
     private RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
@@ -50,7 +64,7 @@ public class CustomSuccessHandler implements AuthenticationSuccessHandler {
         }
 
         redirectStrategy.sendRedirect(request, response, targetUrl);
-        clearAuthenticationAttributes(request);
+        clearAuthenticationAttributes(request, authentication);
     }
     
 }

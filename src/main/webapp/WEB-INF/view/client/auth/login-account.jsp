@@ -34,7 +34,7 @@
 
                                             </div>
                                             <div class="card-body">
-                                                <form method="post" action="/perform-login">
+                                                <form method="post" action="/login-account">
                                                     <c:if test="${param.error != null}">
                                                         <div class="my-2" style="color: red;">Invalid email or password.
                                                         </div>

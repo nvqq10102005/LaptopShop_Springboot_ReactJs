@@ -14,9 +14,10 @@
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
                 <link rel="stylesheet" href="/css/styles.css">
             </head>
+            <jsp:include page="../layout/header.jsp" />
 
             <body class="sb-nav-fixed">
-                <jsp:include page="../layout/header.jsp" />
+
                 <div id="layoutSidenav">
                     <jsp:include page="../layout/sidebar.jsp" />
                     <div id="layoutSidenav_content">

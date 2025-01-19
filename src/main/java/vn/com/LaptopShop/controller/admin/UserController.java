@@ -94,27 +94,37 @@ public class UserController {
     public String updateUserPage(Model model, @PathVariable long id) {
         User user = this.userService.getUserById(id);
         List<Role> roles = this.roleService.getAllRoles();
+        String avatar = user.getAvatar();
 
         model.addAttribute("newUser", user);
         model.addAttribute("id", id);
         model.addAttribute("roles", roles);
+        model.addAttribute("avatar", avatar);
         return "admin/user/update";
     }
     @RequestMapping(value = "/admin/user/update", method = RequestMethod.POST)
-    public String postUpdateUser(Model model,@ModelAttribute("newUser") User user){
-        User currentUser = this.userService.getUserById(user.getId());
-        if(currentUser != null){
-            currentUser.setFullName(user.getFullName());
-            currentUser.setPhone(user.getPhone());
-            currentUser.setAddress(user.getAddress());
+public String postUpdateUser(Model model, @ModelAttribute("newUser") User user, @RequestParam("laptopShopFile") MultipartFile file) {
+    User currentUser = this.userService.getUserById(user.getId());
+    if (currentUser != null) {
+       
+        currentUser.setFullName(user.getFullName());
+        currentUser.setPhone(user.getPhone());
+        currentUser.setAddress(user.getAddress());
 
-            Role role = this.roleService.getRoleById(user.getRole().getId());
-            currentUser.setRole(role);
-
-            this.userService.handleSaveUser(currentUser);
+        
+        if (!file.isEmpty()) {
+            String avatar = this.uploadFileService.handleSaveUploadFile(file, "avatar");
+            currentUser.setAvatar(avatar);
         }
-        return "redirect:/admin/user";
+
+        Role role = this.roleService.getRoleById(user.getRole().getId());
+        currentUser.setRole(role);
+
+        
+        this.userService.handleSaveUser(currentUser);
     }
+    return "redirect:/admin/user";
+}
 
     @GetMapping("/admin/user/delete/{id}")
     public String getDeleteUserPage(Model model, @PathVariable long id){

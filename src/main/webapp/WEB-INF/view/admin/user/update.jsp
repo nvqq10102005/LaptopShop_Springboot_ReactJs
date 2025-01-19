@@ -15,6 +15,23 @@
                 <!-- <link href="/css/demo.css" rel="stylesheet"> -->
                 <link rel="stylesheet" href="/css/styles.css">
 
+                <script>
+                    $(document).ready(() => {
+                        const avatarFile = $("#avatarFile");
+                        const orgImage = "${newProduct.image}";
+                        if (orgImage) {
+                            const urlImage = "/images/product/" + orgImage;
+                            $("#avatarPreview").attr("src", urlImage);
+                            $("#avatarPreview").css({ "display": "block" });
+                        }
+
+                        avatarFile.change(function (e) {
+                            const imgURL = URL.createObjectURL(e.target.files[0]);
+                            $("#avatarPreview").attr("src", imgURL);
+                            $("#avatarPreview").css({ "display": "block" });
+                        });
+                    });
+                </script>
             </head>
 
             <body class="sb-nav-fixed">
@@ -35,7 +52,7 @@
                                             <h3>Update a user</h3>
                                             <hr />
                                             <form:form method="post" action="/admin/user/update"
-                                                modelAttribute="newUser">
+                                                modelAttribute="newUser" enctype="multipart/form-data">
 
                                                 <div class="mb-3" style="display: none;">
                                                     <label class="form-label">Id:</label>
@@ -63,11 +80,23 @@
                                                 <div class="mb-3">
                                                     <label class="form-label">Role:</label>
                                                     <form:select path="role.id" class="form-control">
-                                                         <form:options items="${roles}" itemValue="id" itemLabel="name" />
+                                                        <form:options items="${roles}" itemValue="id"
+                                                            itemLabel="name" />
                                                     </form:select>
                                                 </div>
+                                                <!-- Avatar File -->
+                                                <div class="mb-3 col-12 col-md-6">
+                                                    <label for="avatarFile" class="form-label">Image:</label>
+                                                    <input class="form-control" type="file" id="avatarFile"
+                                                        accept=".png, .jpg, .jpeg" name="laptopShopFile" />
+                                                </div>
+                                                <div class="col-12 mb-3">
+                                                    <img style="max-height: 250px; display: none;" alt="avatar preview"
+                                                        id="avatarPreview" />
+                                                </div>
                                                 <a href="/admin/user" class="btn btn-secondary col-2">Back</a>
-                                                <button type="submit" class="btn btn-warning col-2 float-end">Update</button>
+                                                <button type="submit"
+                                                    class="btn btn-warning col-2 float-end">Update</button>
                                             </form:form>
                                         </div>
 
