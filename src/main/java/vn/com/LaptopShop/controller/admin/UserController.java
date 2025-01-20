@@ -103,7 +103,7 @@ public class UserController {
         return "admin/user/update";
     }
     @RequestMapping(value = "/admin/user/update", method = RequestMethod.POST)
-public String postUpdateUser(Model model, @ModelAttribute("newUser") User user, @RequestParam("laptopShopFile") MultipartFile file) {
+    public String postUpdateUser(Model model, @ModelAttribute("newUser") User user, @RequestParam("laptopShopFile") MultipartFile file) {
     User currentUser = this.userService.getUserById(user.getId());
     if (currentUser != null) {
        
@@ -138,7 +138,5 @@ public String postUpdateUser(Model model, @ModelAttribute("newUser") User user, 
         this.userService.deleteUser(id);
         return "redirect:/admin/user";
     }
-
     
-
 }

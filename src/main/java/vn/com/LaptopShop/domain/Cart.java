@@ -13,7 +13,7 @@ import jakarta.persistence.Table;
 import jakarta.validation.constraints.Min;
 
 @Entity
-@Table(name = "cart")
+@Table(name = "carts")
 public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,7 +29,7 @@ public class Cart {
 
     // cart_detail_id
     @OneToMany(mappedBy = "cart")
-    List<CartDetails> cartDetails;
+    List<CartDetail> cartDetail;
 
     public long getId() {
         return id;
@@ -55,11 +55,11 @@ public class Cart {
         this.user = user;
     }
 
-    public List<CartDetails> getCartDetails() {
-        return cartDetails;
+    public List<CartDetail> getCartDetail() {
+        return cartDetail;
     }
 
-    public void setCartDetails(List<CartDetails> cartDetails) {
-        this.cartDetails = cartDetails;
+    public void setCartDetail(List<CartDetail> cartDetail) {
+        this.cartDetail = cartDetail;
     }
 }
