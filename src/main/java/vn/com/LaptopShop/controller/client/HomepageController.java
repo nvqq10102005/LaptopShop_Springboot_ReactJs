@@ -94,5 +94,15 @@ public class HomepageController {
         public String getAccessDeniedPage(){
         return "client/auth/access-denied";
     }
+
+    @GetMapping("/contact")
+    public String getContactPage(){
+        return "client/contact/show";
+    }
+
+    @GetMapping("/product/contact")
+    public String getContact() {
+        return "client/contact/show"; 
+    }
     
 }
