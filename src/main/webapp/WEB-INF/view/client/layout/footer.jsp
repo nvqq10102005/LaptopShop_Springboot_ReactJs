@@ -71,7 +71,7 @@
                     <p>Email: Example@gmail.com</p>
                     <p>Phone: +0123 4567 8910</p>
                     <p>Payment Accepted</p>
-                    <img src="/client/img/payment.png" class="img-fluid" alt="">
+
                 </div>
             </div>
         </div>
@@ -87,14 +87,11 @@
                 <span class="text-light"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Your Site Name</a>,
                     All right reserved.</span>
             </div>
-            <div class="col-md-6 my-auto text-center text-md-end text-white">
-                <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
-                <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
-                <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a
-                    class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
+            <div class="col-md-6 text-center text-md-end">
+                <a href="#" class="text-light me-3">Privacy Policy</a>
+                <a href="#" class="text-light me-3">Terms of Use</a>
+                <a href="#" class="text-light">Sales and Refunds</a>
             </div>
         </div>
     </div>
-</div>
-<!-- Copyright End -->
+    <!-- Copyright End -->
