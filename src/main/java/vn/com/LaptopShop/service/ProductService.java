@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.actuate.autoconfigure.observation.ObservationProperties.Http;
 import org.springframework.stereotype.Service;
 
 import jakarta.servlet.http.HttpSession;
@@ -90,6 +91,11 @@ public class ProductService {
         }
     }
 
+    public Cart fetchByUser(User user) {
+        return this.cartRepository.findByUser(user);
+    }
+
+
     public List<CartDetail> getCart(String email){
         User user = this.userService.getUserByEmail(email);
         if(user != null){
@@ -101,7 +107,17 @@ public class ProductService {
         return null;
     }
 
-    public void handleDeleteProductFromCart(long cartDetailId){
+    public void handleDeleteProductFromCart(long cartDetailId,HttpSession session){
+        Optional<CartDetail> cartDetail = this.cartDetailRepository.findById(cartDetailId);
+        if(cartDetail.isPresent()){
+            CartDetail realCartDetail = cartDetail.get();
+            Cart cart = realCartDetail.getCart();
+            int isSum = cart.getSum() - 1;
+            cart.setSum(isSum);
+            this.cartRepository.save(cart);
+            session.setAttribute("sum", isSum);
+        }
+        
         this.cartDetailRepository.deleteById(cartDetailId);
     }
 
@@ -111,6 +127,17 @@ public class ProductService {
             CartDetail realCartDetail = cartDetail.get();
             realCartDetail.setQuantity(quantity);
             this.cartDetailRepository.save(realCartDetail);
+        }
+    }
+
+    public void handleUpdateCartBeforeCheckout(List<CartDetail> cartDetails) {
+        for (CartDetail cartDetail : cartDetails) {
+            Optional<CartDetail> cdOptional = this.cartDetailRepository.findById(cartDetail.getId());
+            if (cdOptional.isPresent()) {
+                CartDetail currentCartDetail = cdOptional.get();
+                currentCartDetail.setQuantity(cartDetail.getQuantity());
+                this.cartDetailRepository.save(currentCartDetail);
+            }
         }
     }
 
