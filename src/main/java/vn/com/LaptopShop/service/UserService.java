@@ -2,12 +2,15 @@ package vn.com.LaptopShop.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import jakarta.transaction.Transactional;
 import vn.com.LaptopShop.domain.Role;
 import vn.com.LaptopShop.domain.User;
 import vn.com.LaptopShop.domain.dto.RegisterDTO;
+import vn.com.LaptopShop.repository.OrderRepository;
+import vn.com.LaptopShop.repository.ProductRepository;
 import vn.com.LaptopShop.repository.RoleRepository;
 import vn.com.LaptopShop.repository.UserRepository;
 
@@ -16,6 +19,12 @@ public class UserService {
     private final UserRepository userRepository;
 
     private final RoleRepository roleRepository;
+
+    @Autowired
+    private ProductRepository productRepository;
+
+    @Autowired
+    private OrderRepository orderRepository;
 
     
 
@@ -68,5 +77,19 @@ public class UserService {
     public User getUserByEmail(String email){
         return this.userRepository.findByEmail(email);
     }
+
+    public long countUser(){
+        return this.userRepository.count();
+    }
+
+    public long countProduct(){
+        return this.productRepository.count();
+    }
+
+    public long countOrder(){
+        return this.orderRepository.count();
+    }
+
+
 
 }

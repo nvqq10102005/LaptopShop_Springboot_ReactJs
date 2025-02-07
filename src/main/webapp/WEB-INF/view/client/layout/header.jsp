@@ -57,7 +57,7 @@
 
                                     <li><a class="dropdown-item" href="#">Account Management</a></li>
 
-                                    <li><a class="dropdown-item" href="#">History</a></li>
+                                    <li><a class="dropdown-item" href="/order-history">History</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>

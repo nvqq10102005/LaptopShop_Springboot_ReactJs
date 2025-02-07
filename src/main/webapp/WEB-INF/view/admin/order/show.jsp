@@ -14,77 +14,60 @@
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
                 <link rel="stylesheet" href="/css/styles.css">
             </head>
-            <jsp:include page="../layout/header.jsp" />
 
             <body class="sb-nav-fixed">
-
+                <jsp:include page="../layout/header.jsp" />
                 <div id="layoutSidenav">
                     <jsp:include page="../layout/sidebar.jsp" />
                     <div id="layoutSidenav_content">
                         <main>
                             <div class="container-fluid px-4">
-                                <h1 class="mt-4">Manager Products</h1>
+                                <h1 class="mt-4">Manager Orders</h1>
                                 <ol class="breadcrumb mb-4">
                                     <li class="breadcrumb-item"><a href="/admin">Dashboard</a></li>
-                                    <li class="breadcrumb-item active">Products</li>
+                                    <li class="breadcrumb-item active">Orders</li>
                                 </ol>
                                 <div class="row">
                                     <div class="col-12 mx-auto">
                                         <div class="d-flex justify-content-between">
-                                            <h3>TABLE PRODUCT</h3>
-                                            <!-- Nút "Create Product" -->
-                                            <a href="/admin/product/create" class="btn btn-primary">Create Product</a>
+                                            <h3>TABLE ORDER</h3>
+                                            <!-- Nút "Create Order" -->
                                         </div>
                                         <hr />
                                         <table class="table table-hover table-bordered">
                                             <thead>
                                                 <tr>
                                                     <th>ID</th>
-                                                    <th>Name</th>
-                                                    <th>Price</th>
-                                                    <th>Factory</th>
+                                                    <th>Receiver Name</th>
+                                                    <th>Total Price</th>
+                                                    <th>Receiver Address</th>
+                                                    <th>Receiver Phone</th>
+                                                    <th>Status</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <c:forEach var="product" items="${products}">
+                                                <c:forEach var="order" items="${orders}">
                                                     <tr>
-                                                        <th>${product.id}</th>
-                                                        <td>${product.name}</td>
-                                                        <td>${product.price}</td>
-                                                        <td>${product.factory}</td>
+                                                        <th>${order.id}</th>
+                                                        <td>${order.receiverName}</td>
+                                                        <td>${order.totalPrice}</td>
+                                                        <td>${order.receiverAddress}</td>
+                                                        <td>${order.receiverPhone}</td>
+                                                        <td>${order.status}</td>
+
                                                         <td>
-                                                            <a href="/admin/product/detail/${product.id}"
+                                                            <a href="/admin/order/${order.id}"
                                                                 class="btn btn-success">View Details</a>
-                                                            <a href="/admin/product/update/${product.id}"
+                                                            <a href="/admin/order/update/${order.id}"
                                                                 class="btn btn-warning mx-2">Update</a>
-                                                            <a href="/admin/product/delete/${product.id}"
+                                                            <a href="/admin/order/delete/${order.id}"
                                                                 class="btn btn-danger">Delete</a>
                                                         </td>
                                                     </tr>
                                                 </c:forEach>
                                             </tbody>
                                         </table>
-                                        <nav aria-label="Page navigation example">
-                                            <ul class="pagination justify-content-center">
-                                                <li class="page-item">
-                                                    <a class="page-link" href="#" aria-label="Previous">
-                                                        <span aria-hidden="true">&laquo;</span>
-                                                    </a>
-                                                </li>
-                                                <li class="page-item"><a class="page-link"
-                                                        href="/admin/product?page=1">1</a></li>
-                                                <li class="page-item"><a class="page-link"
-                                                        href="/admin/product?page=2">2</a></li>
-                                                <li class="page-item"><a class="page-link"
-                                                        href="/admin/product?page=3">3</a></li>
-                                                <li class="page-item">
-                                                    <a class="page-link" href="#" aria-label="Next">
-                                                        <span aria-hidden="true">&raquo;</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </nav>
                                     </div>
                                 </div>
                             </div>

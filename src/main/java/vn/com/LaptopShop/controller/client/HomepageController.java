@@ -2,6 +2,7 @@ package vn.com.LaptopShop.controller.client;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.autoconfigure.observation.ObservationProperties.Http;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -17,9 +18,11 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
+import vn.com.LaptopShop.domain.Order;
 import vn.com.LaptopShop.domain.Product;
 import vn.com.LaptopShop.domain.User;
 import vn.com.LaptopShop.domain.dto.RegisterDTO;
+import vn.com.LaptopShop.service.OrderService;
 import vn.com.LaptopShop.service.ProductService;
 import vn.com.LaptopShop.service.UserService;
 
@@ -29,6 +32,9 @@ public class HomepageController {
     private final ProductService productService;
     private final UserService userService;
     private final PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private OrderService orderService;
 
     public HomepageController(ProductService productService,UserService userService,PasswordEncoder passwordEncoder){
         this.productService=productService;
@@ -103,6 +109,19 @@ public class HomepageController {
     @GetMapping("/product/contact")
     public String getContact() {
         return "client/contact/show"; 
+    }
+
+    @GetMapping("/order-history")
+    public String getOrderHistoryPage(Model model, HttpServletRequest request) {
+        User currentUser = new User();// null
+        HttpSession session = request.getSession(false);
+        long id = (long) session.getAttribute("id");
+        currentUser.setId(id);
+
+        List<Order> orders = this.orderService.fetchOrderByUser(currentUser);
+        model.addAttribute("orders", orders);
+
+        return "client/cart/order-history";
     }
     
 }

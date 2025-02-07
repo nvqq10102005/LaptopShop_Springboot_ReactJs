@@ -7,7 +7,7 @@
 
                 <head>
                     <meta charset="utf-8">
-                    <title> Thanh toán - Laptopshop</title>
+                    <title> Checkout - Laptopshop</title>
                     <meta content="width=device-width, initial-scale=1.0" name="viewport">
                     <meta content="" name="keywords">
                     <meta content="" name="description">
@@ -53,18 +53,19 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th scope="col">Sản phẩm</th>
-                                            <th scope="col">Tên</th>
-                                            <th scope="col">Giá cả</th>
-                                            <th scope="col">Số lượng</th>
-                                            <th scope="col">Thành tiền</th>
+                                            <th scope="col">Product</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Price</th>
+                                            <th scope="col">Quantity</th>
+                                            <th scope="col">Total</th>
+
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <c:if test="${ empty cartDetails}">
                                             <tr>
                                                 <td colspan="6">
-                                                    Không có sản phẩm trong giỏ hàng
+                                                    No products in the cart
                                                 </td>
                                             </tr>
                                         </c:if>

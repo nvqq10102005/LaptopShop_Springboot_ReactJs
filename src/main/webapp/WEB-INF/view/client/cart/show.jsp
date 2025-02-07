@@ -8,7 +8,7 @@
 
                 <head>
                     <meta charset="utf-8">
-                    <title> Giỏ hàng - Laptopshop</title>
+                    <title> Cart - Laptopshop</title>
                     <meta content="width=device-width, initial-scale=1.0" name="viewport">
                     <meta content="" name="keywords">
                     <meta content="" name="description">
@@ -55,7 +55,7 @@
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="/">Home</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Chi Tiết Giỏ Hàng</li>
+                                        <li class="breadcrumb-item active" aria-current="page">Cart Details</li>
                                     </ol>
                                 </nav>
                             </div>
@@ -63,19 +63,19 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th scope="col">Sản phẩm</th>
-                                            <th scope="col">Tên</th>
-                                            <th scope="col">Giá cả</th>
-                                            <th scope="col">Số lượng</th>
-                                            <th scope="col">Thành tiền</th>
-                                            <th scope="col">Xử lý</th>
+                                            <th scope="col">Product</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Price</th>
+                                            <th scope="col">Quantity</th>
+                                            <th scope="col">Total</th>
+                                            <th scope="col">Handle</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <c:if test="${ empty cartDetails}">
                                             <tr>
                                                 <td colspan="6">
-                                                    Không có sản phẩm trong giỏ hàng
+                                                    No products in the cart
                                                 </td>
                                             </tr>
                                         </c:if>
