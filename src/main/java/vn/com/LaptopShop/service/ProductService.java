@@ -3,8 +3,10 @@ package vn.com.LaptopShop.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.hibernate.query.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.autoconfigure.observation.ObservationProperties.Http;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import jakarta.servlet.http.HttpSession;
@@ -41,8 +43,8 @@ public class ProductService {
         return this.productRepository.save(pr);
     }
 
-    public List<Product> fetchProducts(){
-        return this.productRepository.findAll();
+    public org.springframework.data.domain.Page<Product> fetchProducts(Pageable pageable){
+        return this.productRepository.findAll(pageable);
     }
 
     public Optional<Product> getProductById(long id){

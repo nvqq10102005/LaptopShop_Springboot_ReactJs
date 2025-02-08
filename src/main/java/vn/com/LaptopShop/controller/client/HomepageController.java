@@ -4,6 +4,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.autoconfigure.observation.ObservationProperties.Http;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -45,8 +48,11 @@ public class HomepageController {
 
     @GetMapping("/")
     public String getHomepage(Model model,HttpServletRequest request){
-        List<Product> products = this.productService.fetchProducts();
-        model.addAttribute("products", products);
+        //Page<Product> products = this.productService.fetchProducts();
+        Pageable pageable = PageRequest.of(0,10);
+        Page<Product> products = this.productService.fetchProducts(pageable);
+        List<Product> productsList = products.getContent();
+        model.addAttribute("products", productsList);
 
         HttpSession session = request.getSession(false);
         if(session != null){
