@@ -28,7 +28,7 @@
                 <div class="collapse navbar-collapse bg-white justify-content-between mx-5" id="navbarCollapse">
                     <div class="navbar-nav">
                         <a href="/" class="nav-item nav-link">Home</a>
-                        <a href="/product/1" class="nav-item nav-link">Shop Detail</a>
+                        <a href="/products" class="nav-item nav-link">Shop Detail</a>
                         <a href="contact" class="nav-item nav-link">Contact</a>
                     </div>
                     <div class="d-flex m-3 me-0">

@@ -1,5 +1,6 @@
 package vn.com.LaptopShop.domain;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -19,7 +20,7 @@ public class CartDetail {
     private double price;
 
     // cart_id: long
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "cart_id")
     private Cart cart;
 

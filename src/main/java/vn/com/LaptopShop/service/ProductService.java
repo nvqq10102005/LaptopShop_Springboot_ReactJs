@@ -7,9 +7,11 @@ import org.hibernate.query.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.autoconfigure.observation.ObservationProperties.Http;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import jakarta.servlet.http.HttpSession;
+import jakarta.transaction.Transactional;
 import vn.com.LaptopShop.domain.*;
 import vn.com.LaptopShop.repository.*;
 
@@ -31,6 +33,13 @@ public class ProductService {
     @Autowired
     private OrderRepository orderRepository;
 
+    
+    private Specification<Product> nameLike(String name){
+    return (root, query, criteriaBuilder) 
+      -> criteriaBuilder.like(root.get(Product_.class.getName()), "%"+name+"%");
+    }
+
+
     public ProductService(ProductRepository productRepository, CartRepository cartRepository, CartDetailRepository cartDetailRepository,OrderDetailRepository orderDetailRepository,OrderRepository orderRepository) {
         this.productRepository = productRepository;
         this.cartRepository = cartRepository;
@@ -43,8 +52,8 @@ public class ProductService {
         return this.productRepository.save(pr);
     }
 
-    public org.springframework.data.domain.Page<Product> fetchProducts(Pageable pageable){
-        return this.productRepository.findAll(pageable);
+    public org.springframework.data.domain.Page<Product> fetchProducts(Pageable pageable,String name){
+        return this.productRepository.findAll(this.nameLike(name), pageable);
     }
 
     public Optional<Product> getProductById(long id){
@@ -54,45 +63,43 @@ public class ProductService {
     public void deleteProduct(long id){
         this.productRepository.deleteById(id);
     }
-
-    public void handleAddProductToCart(String email,long productId,HttpSession session){
+    
+    public void handleAddProductToCart(String email, long productId, HttpSession session, long quantity) {
         User user = this.userService.getUserByEmail(email);
-
-        if(user != null){
+        if (user != null) {
             Cart cart = this.cartRepository.findByUser(user);
-
-            if(cart == null){
-                Cart orderCart = new Cart();
-                orderCart.setUser(user);
-                orderCart.setSum(0);
-                cart = this.cartRepository.save(orderCart);
-                
+    
+            // Nếu không tìm thấy Cart, tạo mới và lưu vào cơ sở dữ liệu
+            if (cart == null) {
+                cart = new Cart();
+                cart.setUser(user);
+                cart.setSum(0);
+                cart = this.cartRepository.save(cart);// Lưu Cart vào DB
             }
-            // search productById
-        Optional<Product> product = this.productRepository.findById(productId);
-        if(product.isPresent()){
-
-            CartDetail isExist = this.cartDetailRepository.findByCartAndProduct(cart, product.get());
-            if(isExist != null){
-                isExist.setQuantity(isExist.getQuantity() + 1);
-                this.cartDetailRepository.save(isExist);
-                return;
-            } else {
-                Product realProduct = product.get();
-                CartDetail cartDetail = new CartDetail();
-                cartDetail.setCart(cart);
-                cartDetail.setProduct(realProduct);
-                cartDetail.setPrice(realProduct.getPrice());
-                cartDetail.setQuantity(1);
-
-                int isSum = cart.getSum()+1;
-                cart.setSum(isSum);
-                this.cartRepository.save(cart);
-                session.setAttribute("sum", isSum);
-                this.cartDetailRepository.save(cartDetail);
+    
+            Optional<Product> productOptional = this.productRepository.findById(productId);
+            if (productOptional.isPresent()) {
+                Product product = productOptional.get();
+                CartDetail existingCartDetail = this.cartDetailRepository.findByCartAndProduct(cart, product);
+    
+                if (existingCartDetail == null) {
+                    CartDetail newCartDetail = new CartDetail();
+                    newCartDetail.setCart(cart);
+                    newCartDetail.setProduct(product);
+                    newCartDetail.setPrice(product.getPrice());
+                    newCartDetail.setQuantity(quantity);
+                    this.cartDetailRepository.save(newCartDetail);
+    
+                    
+                    int updatedSum = cart.getSum() + 1;
+                    cart.setSum(updatedSum);
+                    this.cartRepository.save(cart); // Cập nhật Cart vào DB
+                    session.setAttribute("sum", updatedSum);
+                } else {
+                    existingCartDetail.setQuantity(existingCartDetail.getQuantity() + quantity);
+                    this.cartDetailRepository.save(existingCartDetail);
+                }
             }
-        }
-        
         }
     }
 
